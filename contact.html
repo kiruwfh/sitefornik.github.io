@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Professional Handyman Services</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <h2>HandyPro Services</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="schedule.html">Book Now</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contact Page -->
+    <section class="services-page">
+        <div class="container">
+            <h1 class="section-title">Get in Touch</h1>
+            <p class="text-center" style="margin-bottom: 3rem; color: var(--gray-dark);">
+                Have questions? Need a custom quote? We're here to help!
+            </p>
+
+            <div class="contact-content">
+                <!-- Contact Information -->
+                <div class="contact-info">
+                    <h2 style="margin-bottom: 30px;">Contact Information</h2>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>(419) 975-0393</p>
+                            <p style="font-size: 14px; color: var(--gray-medium);">Mon-Sun: 8AM-8PM</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>autoroom75@gmail.com</p>
+                            <p style="font-size: 14px; color: var(--gray-medium);">We respond within 24 hours</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Service Area</h4>
+                            <p>Solon, OH</p>
+                            <p style="font-size: 14px; color: var(--gray-medium);">We serve a 40-mile radius</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>Business Hours</h4>
+                            <p>Monday - Sunday: 8:00 AM - 8:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-info">
+                    <h2 style="margin-bottom: 30px;">Send Us a Message</h2>
+                    
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="contactName">Your Name *</label>
+                            <input type="text" id="contactName" name="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contactEmail">Email Address *</label>
+                            <input type="email" id="contactEmail" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contactPhone">Phone Number</label>
+                            <input type="tel" id="contactPhone" name="phone">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contactSubject">Subject *</label>
+                            <select id="contactSubject" name="subject" required>
+                                <option value="">Select a subject...</option>
+                                <option value="General Inquiry">General Inquiry</option>
+                                <option value="Request Quote">Request a Quote</option>
+                                <option value="Service Question">Service Question</option>
+                                <option value="Feedback">Feedback</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contactMessage">Message *</label>
+                            <textarea id="contactMessage" name="message" rows="5" required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">
+                            <span id="contactSubmitText">Send Message</span>
+                            <span class="loading" id="contactSubmitLoading" style="display: none;"></span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- FAQ Section -->
+            <div style="margin-top: 80px;">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                
+                <div style="max-width: 800px; margin: 0 auto;">
+                    <div style="background-color: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 20px;">
+                        <h4 style="color: var(--primary-color); margin-bottom: 10px;">How far in advance should I book?</h4>
+                        <p>We recommend booking at least 2-3 days in advance to ensure availability. However, we do accommodate same-day requests when possible.</p>
+                    </div>
+
+                    <div style="background-color: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 20px;">
+                        <h4 style="color: var(--primary-color); margin-bottom: 10px;">Do you provide free estimates?</h4>
+                        <p>Yes! We provide free estimates for all our services. Simply contact us with details about your project.</p>
+                    </div>
+
+                    <div style="background-color: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 20px;">
+                        <h4 style="color: var(--primary-color); margin-bottom: 10px;">What payment methods do you accept?</h4>
+                        <p>We accept cash, check, and all major credit cards. Payment is due upon completion of the service.</p>
+                    </div>
+
+                    <div style="background-color: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 20px;">
+                        <h4 style="color: var(--primary-color); margin-bottom: 10px;">Are you insured?</h4>
+                        <p>Yes, we are fully licensed and insured for your peace of mind and protection.</p>
+                    </div>
+
+                    <div style="background-color: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                        <h4 style="color: var(--primary-color); margin-bottom: 10px;">What if I need to cancel or reschedule?</h4>
+                        <p>We understand plans change. Please give us at least 24 hours notice for cancellations or rescheduling to avoid any fees.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>HandyPro Services</h3>
+                    <p>Your trusted partner for all handyman needs</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="schedule.html">Book Now</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-phone"></i> (419) 975-0393</p>
+                    <p><i class="fas fa-envelope"></i> autoroom75@gmail.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 HandyPro Services. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/contact.js"></script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+# Rewrite rules for clean URLs
+RewriteEngine On
+
+# Redirect /onlyadmin to /onlyadmin.html
+RewriteRule ^onlyadmin/?$ /onlyadmin.html [L]
+
+# Optional: Remove .html extension from URLs
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.html [NC,L]

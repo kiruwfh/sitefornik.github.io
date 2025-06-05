@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Professional Handyman Services</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</head>
+<body>
+    <!-- Admin Login -->
+    <div class="admin-login" id="adminLogin">
+        <h2 class="text-center" style="margin-bottom: 30px;">Admin Login</h2>
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Login</button>
+        </form>
+    </div>
+
+    <!-- Admin Dashboard -->
+    <div class="admin-dashboard" id="adminDashboard" style="display: none;">
+        <!-- Navigation -->
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-brand">
+                    <h2>Admin Panel</h2>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Back to Site</a></li>
+                    <li><a href="#" id="logoutBtn">Logout</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="container">
+            <h1 style="margin: 30px 0;">Booking Management</h1>
+
+            <!-- Tabs -->
+            <div class="admin-tabs">
+                <button class="admin-tab active" data-tab="requests">Booking Requests</button>
+                <button class="admin-tab" data-tab="calendar">Calendar Management</button>
+            </div>
+
+            <!-- Booking Requests Tab -->
+            <div class="tab-content" id="requestsTab">
+                <h2 style="margin-bottom: 20px;">Pending Booking Requests</h2>
+                <div id="bookingRequests">
+                    <!-- Booking requests will be populated here -->
+                </div>
+            </div>
+
+            <!-- Calendar Management Tab -->
+            <div class="tab-content" id="calendarTab" style="display: none;">
+                <h2 style="margin-bottom: 20px;">Block Dates & Time Slots</h2>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
+                    <!-- Block Dates -->
+                    <div>
+                        <h3>Block Entire Days</h3>
+                        <div class="form-group">
+                            <label for="blockDate">Select Date to Block</label>
+                            <input type="date" id="blockDate" class="form-control">
+                        </div>
+                        <button class="btn btn-primary" id="blockDateBtn">Block Date</button>
+                        
+                        <h4 style="margin-top: 30px;">Currently Blocked Dates</h4>
+                        <div id="blockedDatesList" style="margin-top: 15px;">
+                            <!-- Blocked dates will be listed here -->
+                        </div>
+                    </div>
+
+                    <!-- Block Time Slots -->
+                    <div>
+                        <h3>Block Specific Time Slots</h3>
+                        <div class="form-group">
+                            <label for="blockSlotDate">Select Date</label>
+                            <input type="date" id="blockSlotDate" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Select Time Slots to Block</label>
+                            <div class="time-slots" id="adminTimeSlots">
+                                <div class="time-slot" data-time="08:00 - 10:00">08:00 - 10:00</div>
+                                <div class="time-slot" data-time="10:00 - 12:00">10:00 - 12:00</div>
+                                <div class="time-slot" data-time="13:00 - 15:00">13:00 - 15:00</div>
+                                <div class="time-slot" data-time="15:00 - 17:00">15:00 - 17:00</div>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary" id="blockTimeSlotsBtn">Block Selected Time Slots</button>
+                        
+                        <h4 style="margin-top: 30px;">Currently Blocked Time Slots</h4>
+                        <div id="blockedTimeSlotsList" style="margin-top: 15px;">
+                            <!-- Blocked time slots will be listed here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Accept/Decline Modal -->
+    <div class="modal" id="responseModal">
+        <div class="modal-content">
+            <span class="modal-close" id="closeResponseModal">&times;</span>
+            <h2 id="responseModalTitle"></h2>
+            <div id="bookingDetailsDisplay" style="margin: 20px 0; padding: 15px; background-color: #f9f9f9; border-radius: 5px;">
+                <!-- Booking details will be displayed here -->
+            </div>
+            <form id="responseForm">
+                <div class="form-group">
+                    <label for="adminMessage" id="messageLabel">Message (Optional)</label>
+                    <textarea id="adminMessage" name="adminMessage" rows="4"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">
+                    <span id="responseSubmitText">Send Response</span>
+                    <span class="loading" id="responseSubmitLoading" style="display: none;"></span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>
